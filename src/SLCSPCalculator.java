@@ -13,7 +13,7 @@ public class SLCSPCalculator {
 	
 	private static final Map<Integer, Set<String>> ZIPCODE_TO_RATEAREA = new HashMap<>();
 	
-	private static final Map<String, Set<Double>> RATEAREA_TO_RATES = new HashMap<>();
+	protected static final Map<String, Set<Double>> RATEAREA_TO_RATES = new HashMap<>();
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		
@@ -24,6 +24,7 @@ public class SLCSPCalculator {
 		calculateSLCSP();
 	}
 	
+	/* Method to read Zips.csv file and map RateAreas to the corresponding zip codes */
 	private static void populateZipCodeToRateAreaMap() throws FileNotFoundException, IOException {
 		int lineCount = 1;
 		try (BufferedReader br = new BufferedReader(new FileReader("zips.csv"))) {
@@ -41,7 +42,8 @@ public class SLCSPCalculator {
 		}
 	}
 	
-	private static void populateRateAreaToRatesMap() throws FileNotFoundException, IOException {
+	/* Method to read plans.csv file and map the rate to the corresponding rate areas */
+	protected static void populateRateAreaToRatesMap() throws FileNotFoundException, IOException {
 		int lineCount = 1;
 		try (BufferedReader br = new BufferedReader(new FileReader("plans.csv"))) {
 			String line;
@@ -60,6 +62,7 @@ public class SLCSPCalculator {
 		}
 	}
 	
+	/* Method to calculate the rates for a given zip code and find the second lowest */
 	private static void calculateSLCSP() throws FileNotFoundException, IOException {
 		int lineCount = 1;
 		try (BufferedReader br = new BufferedReader(new FileReader("slcsp.csv"))) {
