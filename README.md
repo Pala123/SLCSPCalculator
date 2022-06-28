@@ -30,3 +30,5 @@ It would look something as ` ../../../SLCSPCalculator/src>java SLCSPCalculator`
 - Results will be printed on the window. An output file for this program has been included in the repo as "Output.txt" file.
 
 Note: If the program has to be run directly using an IDE like Eclipse or IntelliJ. The path for the FileReader in SLSCPCalculator.java has to be changed from FileReader("zips.csv") to FileReader("src/zips.csv") so that the compiler can be able to read the csv files.
+
+` The file for dog license assessment has been included in a separate branch named "Dog-license"  `
